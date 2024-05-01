@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.shoppingapplication.R
 import com.example.shoppingapplication.databinding.FragmentCategoryBinding
 
 class CategoryFragment : Fragment() {
@@ -27,14 +29,26 @@ class CategoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = CategoryAdapter()
+
+        val adapter = CategoryAdapter { categoryId ->
+            // Navigate without Safe Args
+            navigateToShoppingList(categoryId)
+        }
+
         binding.recyclerViewCategories.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewCategories.adapter = adapter
 
 
-        viewModel.categories.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+        viewModel.categories.observe(viewLifecycleOwner) { categories ->
+            adapter.submitList(categories)
         }
+    }
+
+    private fun navigateToShoppingList(categoryId: Int) {
+        val bundle = Bundle().apply {
+            putInt("categoryId", categoryId)
+        }
+        findNavController().navigate(R.id.action_nav_category_to_nav_shopping_list, bundle)
     }
 
     override fun onDestroyView() {

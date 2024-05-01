@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.shoppingapplication.R
 import com.example.shoppingapplication.databinding.ItemShoppingListBinding
 import com.example.shoppingapplication.domain.model.ShoppingItem
 
@@ -24,7 +25,10 @@ class ShoppingItemAdapter : ListAdapter<ShoppingItem, ShoppingItemAdapter.Shoppi
         fun bind(item: ShoppingItem) {
             binding.textViewProductName.text = item.name
             binding.textViewPrice.text = "${item.price}"
-            Glide.with(binding.imageViewProduct.context).load(item.url).into(binding.imageViewProduct)
+            Glide.with(binding.imageViewProduct.context)
+                .load(item.url)
+                .placeholder(R.drawable.icon_category)
+                .into(binding.imageViewProduct)
         }
     }
 

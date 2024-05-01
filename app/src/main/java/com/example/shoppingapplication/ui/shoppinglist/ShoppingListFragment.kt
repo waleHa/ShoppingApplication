@@ -23,14 +23,14 @@ class ShoppingListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ShoppingItemAdapter()
 
+        val categoryId = requireArguments().getInt("categoryId", -1)
+        val adapter = ShoppingItemAdapter()
         binding.recyclerViewShoppingList.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewShoppingList.adapter = adapter
 
-
-        viewModel.shoppingItems.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+        viewModel.shoppingItems.observe(viewLifecycleOwner) { items ->
+            adapter.submitList(items.filter { it.categoryId == categoryId })
         }
     }
 

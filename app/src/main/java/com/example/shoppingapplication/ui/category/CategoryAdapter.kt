@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.shoppingapplication.databinding.ItemCategoryBinding
 import com.example.shoppingapplication.domain.model.Category
 
-class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(DiffCallback) {
+class CategoryAdapter(private val onCategoryClicked: (Int) -> Unit) : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -17,7 +17,11 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryViewHolder
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val category = getItem(position)
+        holder.bind(category)
+        holder.itemView.setOnClickListener {
+            onCategoryClicked(category.id) // Pass the category ID to the fragment
+        }
     }
 
     class CategoryViewHolder(private val binding: ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
