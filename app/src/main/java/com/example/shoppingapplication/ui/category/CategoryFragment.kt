@@ -6,33 +6,35 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shoppingapplication.databinding.FragmentCategoryBinding
 
 class CategoryFragment : Fragment() {
-
     private var _binding: FragmentCategoryBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+    private val viewModel: CategoryViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val categoryViewModel =
-            ViewModelProvider(this).get(CategoryViewModel::class.java)
-
         _binding = FragmentCategoryBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textGallery
-        categoryViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adapter = CategoryAdapter()
+        binding.recyclerViewCategories.layoutManager = LinearLayoutManager(context)
+        binding.recyclerViewCategories.adapter = adapter
+
+
+        viewModel.categories.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
         }
-        return root
     }
 
     override fun onDestroyView() {

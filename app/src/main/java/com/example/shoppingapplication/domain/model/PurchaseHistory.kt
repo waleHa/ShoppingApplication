@@ -5,8 +5,8 @@ data class PurchaseHistory(
     val items: List<ShoppingItem>,
     val purchaseDate: String,
 
-){
-    var totalAmount: Double = listOf(shoppingItems[0], shoppingItems[2]).sumOf {
+    ) {
+    var totalAmount = items.sumOf {
         (it.price * it.quantity)
     }
 }

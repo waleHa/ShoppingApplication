@@ -1,12 +1,12 @@
 package com.example.shoppingapplication.domain.model
 
-val categories = listOf(
-    Category(id = 1, name = "Electronics", description = "All electronic items"),
-    Category(id = 2, name = "Books", description = "Read and grow your knowledge"),
-    Category(id = 3, name = "Clothing", description = "Latest trends in fashion")
+val categoriesHardCoded = listOf(
+    Category(id = 1, name = "Electronics", description = "All electronic items","https://ecelectronics.com/wp-content/uploads/2020/04/Modern-Electronics-EC-.jpg"),
+    Category(id = 2, name = "Books", description = "Read and grow your knowledge","https://images.inc.com/uploaded_files/image/1920x1080/getty_655998316_2000149920009280219_363765.jpg"),
+    Category(id = 3, name = "Clothing", description = "Latest trends in fashion","https://www.greenqueen.com.hk/wp-content/uploads/2021/07/Rental-Fashion-Causes-More-Emissions-Than-Throwing-Clothes-Away.jpg")
 )
 
-val shoppingItems = listOf(
+val shoppingItemsHardCoded = listOf(
     ShoppingItem(
         id = 101,
         name = "Laptop",
@@ -41,22 +41,33 @@ val shoppingItems = listOf(
     )
 )
 
-val cartItems = mutableListOf(
+val cartItemsHardCoded = mutableListOf(
     CartItem(id = 1, shoppingItemId = 101, quantity = 1),
     CartItem(id = 2, shoppingItemId = 102, quantity = 2),
     CartItem(id = 3, shoppingItemId = 301, quantity = 1)
 )
 
+val userHardCoded = User(
+    userName = "@waleed_hamam",
+    fullName = "Alwaleed Hamam",
+    location = "Atlanta",
+    joinDate = "Joined March 2023",
+    description = "CEO System D, Because your satisfaction is everything & Standing out from the rest, and that’s what we want you to be as well.",
+    websiteUrl = "www.alwaleed.com",
+    email = "Hello@alwaleed.com",
+    phoneNumber = "+1-517-218-9200"
+)
 
-val purchaseHistory = listOf(
+
+val purchaseHistoryHardCoded = listOf(
     PurchaseHistory(
         transactionId = 1001,
-        items = listOf(shoppingItems[0], shoppingItems[2]),
+        items = listOf(shoppingItemsHardCoded[0], shoppingItemsHardCoded[2]),
         purchaseDate = "2023-04-01",
     ),
     PurchaseHistory(
         transactionId = 1002,
-        items = listOf(shoppingItems[1], shoppingItems[3]),
+        items = listOf(shoppingItemsHardCoded[1], shoppingItemsHardCoded[3]),
         purchaseDate = "2023-04-15",
     )
 )

@@ -6,26 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.preference.PreferenceFragmentCompat
 import com.example.shoppingapplication.R
 
-class SettingFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = SettingFragment()
-    }
-
-    private val viewModel: SettingViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_setting, container, false)
+class SettingsFragment : PreferenceFragmentCompat() {
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+//        setPreferencesFromResource(R.xml.preferences, rootKey)
     }
 }

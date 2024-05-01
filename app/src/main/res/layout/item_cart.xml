@@ -32,6 +32,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_4dp"
             android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/size_16sp"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintStart_toEndOf="@+id/image_view_profile"
             app:layout_constraintTop_toTopOf="parent"

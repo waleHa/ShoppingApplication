@@ -16,12 +16,14 @@
         android:padding="16dp">
 
         <ImageView
+            android:id="@+id/image_view_product"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:padding="2dp"
             tools:src="@drawable/icon_drawer" />
 
         <TextView
+            android:id="@+id/text_view_product_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -31,6 +33,7 @@
             tools:text="Product Name" />
 
         <TextView
+            android:id="@+id/text_view_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#555"
