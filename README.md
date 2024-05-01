@@ -15,7 +15,6 @@ This Shopping Application is designed to facilitate online shopping through a mo
 - Android SDK
 - AndroidX Libraries
 - MVVM Architecture
-- Room Database for local data storage
 - Glide for image loading
 
 ## Setup
