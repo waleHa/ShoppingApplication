@@ -57,5 +57,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.glide)
+    implementation("com.google.code.gson:gson:2.10.0")
+    implementation("com.squareup.retrofit2:retrofit:2.10.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.10.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+//    val lifecycle_version = "2.7.0"
+////    implementation("androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version")
+//    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+//    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
 
 }

@@ -44,9 +44,9 @@ class CategoryFragment : Fragment() {
         }
     }
 
-    private fun navigateToShoppingList(categoryId: Int) {
+    private fun navigateToShoppingList(categoryId: String) {
         val bundle = Bundle().apply {
-            putInt("categoryId", categoryId)
+            putString("categoryId", categoryId)
         }
         findNavController().navigate(R.id.action_nav_category_to_nav_shopping_list, bundle)
     }

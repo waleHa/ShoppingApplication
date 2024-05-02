@@ -28,11 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setAnchorView(R.id.fab).show()
-        }
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
 
@@ -49,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_history,
                 R.id.nav_profile,
                 R.id.nav_setting,
-                R.id.nav_shopping_list
+//                R.id.nav_shopping_list
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

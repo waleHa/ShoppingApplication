@@ -34,7 +34,7 @@ class CartItemAdapter(private val increaseQuantity: (CartItem) -> Unit) :
             binding.textViewCategoryName.text = cartItem.name
             binding.textViewCategoryDescription.text = "Quantity: ${cartItem.quantity}"
             val MYTAG = "TAG: CartItemAdapter"
-            Log.i(MYTAG,cartItem.url)
+//            Log.i(MYTAG,cartItem.url)
             // Load image using Glide
             Glide.with(binding.root.context)
                 .load(cartItem.url)

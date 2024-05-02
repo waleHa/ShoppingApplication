@@ -19,5 +19,4 @@ class CartViewModel : ViewModel() {
             else it
         }
     }
-
 }
