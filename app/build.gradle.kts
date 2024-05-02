@@ -1,6 +1,11 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+//    alias(libs.plugins.kotlinParcelize)
+//    kotlin("parcelize") version "1.9.0"  // This should match the Kotlin version
+//    id("org.jetbrains.kotlin.plugin.parcelize") version "1.9.0" // Explicitly specify the version
+    id("kotlin-parcelize")
+
 }
 
 android {

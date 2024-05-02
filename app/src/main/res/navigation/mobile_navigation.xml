@@ -39,5 +39,14 @@
         android:id="@+id/nav_shopping_list"
         android:name="com.example.shoppingapplication.ui.shoppinglist.ShoppingListFragment"
         android:label="Shopping List"
-        tools:layout="@layout/fragment_shopping_list" />
+        tools:layout="@layout/fragment_shopping_list" >
+        <action
+            android:id="@+id/action_nav_shopping_list_to_detailedShoppingFragment"
+            app:destination="@id/detailedShoppingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedShoppingFragment"
+        android:name="com.example.shoppingapplication.ui.shoppinglist.DetailedShoppingFragment"
+        android:label="DetailedShoppingFragment"
+        tools:layout="@layout/fragment_detailed_shopping" />
 </navigation>

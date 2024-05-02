@@ -5,6 +5,6 @@ data class CartItem(
     val shoppingItemId: Int,
     var quantity: Int
 ) {
-    val name = shoppingItemsHardCoded.filter { it.id == shoppingItemId }[0].name
-    val url = shoppingItemsHardCoded.filter { it.id == shoppingItemId }[0].url
+    val name = Constants.shoppingItemsHardCoded.filter { it.id == shoppingItemId }[0].name
+    val url = Constants.shoppingItemsHardCoded.filter { it.id == shoppingItemId }[0].url
 }

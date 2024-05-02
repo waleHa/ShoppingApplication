@@ -3,10 +3,9 @@ package com.example.shoppingapplication.ui.shoppinglist
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.shoppingapplication.domain.model.ShoppingItem
-import com.example.shoppingapplication.domain.model.shoppingItemsHardCoded
 import androidx.lifecycle.viewModelScope
 import com.example.shoppingapplication.data.api.RetrofitInstance
+import com.example.shoppingapplication.domain.model.ShoppingItem
 import kotlinx.coroutines.launch
 
 

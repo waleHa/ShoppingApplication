@@ -1,8 +1,11 @@
 package com.example.shoppingapplication.domain.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class ShoppingItem(
     @SerializedName("id")
     val id: Int? = 0,
@@ -21,4 +24,4 @@ data class ShoppingItem(
 
     @SerializedName("rating")
     val ratingModel: Rating? = Rating(),
-)
+):Parcelable

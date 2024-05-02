@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.shoppingapplication.domain.model.CartItem
-import com.example.shoppingapplication.domain.model.cartItemsHardCoded
+import com.example.shoppingapplication.domain.model.Constants.cartItemsHardCoded
 
 class CartViewModel : ViewModel() {
 
