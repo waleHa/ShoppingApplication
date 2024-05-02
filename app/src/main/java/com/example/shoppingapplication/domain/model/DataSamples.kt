@@ -1,10 +1,13 @@
 package com.example.shoppingapplication.domain.model
 
 val categoriesHardCoded = listOf(
-    Category(id = 1, name = "Electronics", description = "All electronic items","https://ecelectronics.com/wp-content/uploads/2020/04/Modern-Electronics-EC-.jpg"),
-    Category(id = 2, name = "Books", description = "Read and grow your knowledge","https://images.inc.com/uploaded_files/image/1920x1080/getty_655998316_2000149920009280219_363765.jpg"),
-    Category(id = 3, name = "Clothing", description = "Latest trends in fashion","https://www.greenqueen.com.hk/wp-content/uploads/2021/07/Rental-Fashion-Causes-More-Emissions-Than-Throwing-Clothes-Away.jpg")
+    Category(id = 1, name = "electronics", description = "All electronic items","https://ecelectronics.com/wp-content/uploads/2020/04/Modern-Electronics-EC-.jpg"),
+    Category(id = 2, name = "jewelery", description = "Read and grow your knowledge","https://c8.alamy.com/comp/B07E57/expensive-jewellery-in-a-shop-window-on-ponte-vecchio-florence-B07E57.jpg"),
+    Category(id = 3, name = "men's clothing", description = "Latest Men trends in fashion","https://www.greenqueen.com.hk/wp-content/uploads/2021/07/Rental-Fashion-Causes-More-Emissions-Than-Throwing-Clothes-Away.jpg"),
+    Category(id = 3, name = "women's clothing", description = "Latest Women trends in fashion","https://as2.ftcdn.net/jpg/01/19/88/81/240_F_119888114_8xcTup3TuyQATE1DWH8Ii6RZUYBwyvJx.jpg")
+
 )
+
 
 val shoppingItemsHardCoded = listOf(
     ShoppingItem(
