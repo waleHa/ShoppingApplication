@@ -7,16 +7,25 @@ import com.example.shoppingapplication.domain.model.ShoppingItem
 import com.example.shoppingapplication.domain.model.shoppingItemsHardCoded
 import androidx.lifecycle.viewModelScope
 import com.example.shoppingapplication.data.api.RetrofitInstance
+import kotlinx.coroutines.launch
 
 
 class ShoppingListViewModel : ViewModel() {
 
-    val shoppingItems: LiveData<List<ShoppingItem>> = MutableLiveData(shoppingItemsHardCoded,)
-}
-private fun getProducts():List<ShoppingItem> {
-    viewModelScope.launch {
-        val result = RetrofitInstance.apiClient.getProducts()
-        if (!result.isNullOrEmpty())
-            result
+    private val _shoppingItems: MutableLiveData<List<ShoppingItem>> = MutableLiveData()
+
+    // Exposed as LiveData for observing changes from UI
+    val shoppingItems: LiveData<List<ShoppingItem>> = _shoppingItems
+
+    init {
+        loadProducts()
+    }
+
+    private fun loadProducts() {
+        viewModelScope.launch {
+            val products = RetrofitInstance.apiClient.getProducts()
+            _shoppingItems.postValue(products)
+        }
     }
 }
+
